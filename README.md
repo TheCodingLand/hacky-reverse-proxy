@@ -12,11 +12,11 @@ Edit the proxy-pass IP in nginx/default.conf
 
 Edit proxy.yaml and change settings to expose your nginx container on the URL you want you external IP to respond.
 
-###build the nginx-external container : 
+### build the nginx-external container : 
+ 
+```docker build . -t nginx-external```
 
-´´´docker build . -t nginx-external´´´
-
-´´´docker stack deploy proxy -c proxy.yaml´´´
+```docker stack deploy proxy -c proxy.yaml```
 
 
 
