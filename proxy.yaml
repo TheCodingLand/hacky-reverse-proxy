@@ -1,0 +1,24 @@
+
+version: '3.7'
+services:
+  tina-api:
+    image: nginx-external
+    deploy:
+      labels:
+        - "traefik.backend=external"
+        - "traefik.docker.network=proxy"
+        - "traefik.enable=true"
+        - "traefik.port=80"
+        - "traefik.frontend.rule=Host:external.${TINA_DOMAIN}"
+        - "traefik.frontend.entryPoints=http, https"
+    networks:
+      - internal
+      - proxy
+
+networks:
+  proxy:
+    driver: overlay
+    external: true
+  internal:
+    driver: overlay
+    external: true
