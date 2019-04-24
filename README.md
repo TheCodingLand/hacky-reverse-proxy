@@ -1,7 +1,7 @@
 # hacky-reverse-proxy
 a bit of a hack to allow traefik to redirect to external hosts using nginx as a relay container
 
-##Disclaimer : 
+## Disclaimer : 
 
 There are now better ways to do that but I think they only work with static changes to traefik.toml
 
